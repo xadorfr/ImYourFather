@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="reparenting.feature.windows"
+      label="Reparent Feature for Windows"
+      version="1.0.0.qualifier"
+      os="win32"
+      ws="win32"
+      arch="x86,x86_64">
+
+   <plugin
+         id="reparenting.plugin.core"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="reparenting.plugin.windows.hookdaemons"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="reparenting.plugin.windows.xserver"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+</feature>

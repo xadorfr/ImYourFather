@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry exported="true" kind="lib" path="lib/reparenting.api.launchprocess.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/reparenting.api.shared.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/reparenting.api.core.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/J11.jar"/>
+	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

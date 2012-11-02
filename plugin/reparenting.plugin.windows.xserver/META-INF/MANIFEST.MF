@@ -1,0 +1,5 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Xserver for Windows
+Bundle-SymbolicName: reparenting.plugin.windows.xserver;singleton:=true
+Bundle-Version: 1.0.0.qualifier
