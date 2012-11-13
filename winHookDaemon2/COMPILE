@@ -1,0 +1,2 @@
+gcc -c -DHOOKPROC_EXPORTS hookProc.c
+gcc -shared -o hookProc.dll hookProc.o -Wl,--out-implib,libhookproc.a

@@ -9,6 +9,6 @@
 	<classpathentry combineaccessrules="false" kind="src" path="/reparenting.api.launchprocess"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/reparenting.api.shared"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/J11"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/JUnixSocket"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/JNAUnixSocket"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
