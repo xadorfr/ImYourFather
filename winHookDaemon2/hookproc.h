@@ -20,7 +20,7 @@ const LPCSTR WIN_TAG_CREATED = "JUSTCREATED";
 const LPCSTR WIN_TAG_REPARENTED = "REPARENTED";
 
 #ifdef __cplusplus
-} // __cplusplus defined.
+}
 #endif
 
 #endif

@@ -1,4 +1,4 @@
-LIBRARY TestLib.dll
+LIBRARY HookProc.dll
         EXPORTS
           HookProc
           HookProcSetTid

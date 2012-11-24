@@ -7,13 +7,13 @@
 /* TODO (todo tag - code search : #MultiClient)
  * atm the DLL is not prepared to be used by several client programs at the same time
  * a solution would be a collection of thread id : thread id of client programs which await for window's handles
- * In between time, the boolean "loaded" avoid multi programs attachment 
  */
-#pragma data_seg(".shared")
-BOOL loaded = FALSE;
-DWORD threadId = 0;
-#pragma data_seg()
-#pragma comment(linker, "/SECTION:.shared,RWS") // /!\ very important to make shared variable available for all DLL instances
+ 
+ /* shared var */
+DWORD threadId __attribute__((section ("shared"), shared)) = 0;
+
+HINSTANCE hinst; 
+
 
 BOOL APIENTRY DllMain( HMODULE hModule,
                        DWORD  ul_reason_for_call,
@@ -23,23 +23,15 @@ BOOL APIENTRY DllMain( HMODULE hModule,
 	switch (ul_reason_for_call)
 	{
 	case DLL_PROCESS_ATTACH: {
-		/* TODO#MultiClient */
-		if(loaded == TRUE){
-			return FALSE;
-		}
-		loaded = TRUE;
 		break;
-							 }
+	}
 	case DLL_THREAD_ATTACH:
 		break;
 	case DLL_THREAD_DETACH:
 		break;
 	case DLL_PROCESS_DETACH: {
-		if(loaded) {
-			loaded = FALSE;
-		}
 		break;
-							 }
+	}
 	}
 	return TRUE;
 }
@@ -53,7 +45,7 @@ LRESULT CALLBACK HookProc (int nCode, WPARAM wParam, LPARAM lParam) {
 	if (nCode < 0) {
 		return CallNextHookEx(NULL, nCode, wParam, lParam);
 	}
-
+	
 	switch(nCode) {
 
 	case HCBT_CREATEWND: {
@@ -69,7 +61,7 @@ LRESULT CALLBACK HookProc (int nCode, WPARAM wParam, LPARAM lParam) {
 		/* check tag */
 		HWND win = (HWND) wParam;
 		if (GetProp(win, WIN_TAG_CREATED) == NULL) {
-			// if the tag tagCreated isn't detected, it means that the activated window has not been freshly created
+			// if the tag isn't detected, it means that the activated window has not been freshly created
 			break;
 		}
 		RemoveProp(win, WIN_TAG_CREATED);
