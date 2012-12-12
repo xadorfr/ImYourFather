@@ -1,9 +1,9 @@
-#include <windows.h>
 #include <winsock2.h>
 #include <ws2tcpip.h>
 #include <stdlib.h>
 #include <stdio.h>
 #include <pthread.h>
+#include <windows.h>
 #include "hookproc.h"
 
 typedef LRESULT CALLBACK (*HookFunc) (int nCode, WPARAM wParam, LPARAM lParam);
@@ -122,7 +122,7 @@ main(int argc, char** argv)
 	while(GetMessage(&msg, threadOnly, 0, 0)) {		
 		if((msg.message == CUSTOM_MSG_CREATION) || (msg.message == CUSTOM_MSG_DESTRUCTION)) {
 			hwnd = (HWND) msg.wParam;
-			intHwnd = (int) hwnd;
+			intHwnd = (intptr_t) hwnd;
 			intHwnd = htonl(intHwnd);
 			
 			type = (msg.message == CUSTOM_MSG_CREATION) ? 0 : htonl(1);
