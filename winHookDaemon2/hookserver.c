@@ -123,16 +123,21 @@ main(int argc, char** argv)
 		if((msg.message == CUSTOM_MSG_CREATION) || (msg.message == CUSTOM_MSG_DESTRUCTION)) {
 			hwnd = (HWND) msg.wParam;
 			intHwnd = (int) hwnd;
-			type = (msg.message == CUSTOM_MSG_CREATION) ? 0 : 1;
+			intHwnd = htonl(intHwnd);
+			
+			type = (msg.message == CUSTOM_MSG_CREATION) ? 0 : htonl(1);
+			
+			fprintf(stderr, "%d : %d\n", msg.message == CUSTOM_MSG_CREATION, hwnd);
+			
 			for(int i = 0; i < MAX_CLI; i++) {
 				if(clients[i] != -1) {
-				    rc = send(clients[i], (char*) &type, sizeof(int), MSG_OOB);
+				    rc = send(clients[i], (char*) &type, sizeof(int), 0);
 					if(rc == SOCKET_ERROR) {
 						closesocket(clients[i]);
 						continue;
 					}
 					
-					rc = send(clients[i], (char*) &intHwnd, sizeof(int), MSG_OOB);
+					rc = send(clients[i], (char*) &intHwnd, sizeof(int), 0);
 					if(rc == SOCKET_ERROR) {
 						closesocket(clients[i]);
 						continue;
