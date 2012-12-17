@@ -2,7 +2,6 @@ package fr.labri.reparenting.api.core;
 
 import java.io.DataInputStream;
 import java.io.IOException;
-import java.net.InetAddress;
 import java.net.Socket;
 import java.net.UnknownHostException;
 

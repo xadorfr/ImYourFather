@@ -61,6 +61,7 @@ public class ParentView extends ViewPart {
 		} catch (NoSuchFieldException | SecurityException
 				| IllegalArgumentException | IllegalAccessException e) {
 			handle = composite.handle;
+			// macos : handle = composite.view.id;
 		}
 
 		this.handle = new Long(handle);
