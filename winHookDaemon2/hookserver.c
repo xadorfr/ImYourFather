@@ -122,12 +122,11 @@ main(int argc, char** argv)
 	while(GetMessage(&msg, threadOnly, 0, 0)) {		
 		if((msg.message == CUSTOM_MSG_CREATION) || (msg.message == CUSTOM_MSG_DESTRUCTION)) {
 			hwnd = (HWND) msg.wParam;
-			intHwnd = (intptr_t) hwnd;
+			intHwnd = hwnd;
 			intHwnd = htonl(intHwnd);
 			
 			type = (msg.message == CUSTOM_MSG_CREATION) ? 0 : htonl(1);
-			
-			fprintf(stderr, "%d : %d\n", msg.message == CUSTOM_MSG_CREATION, hwnd);
+			fprintf(stderr, "%s : %d\n", (msg.message == CUSTOM_MSG_CREATION) ? "creation " : "destruction ", hwnd);
 			
 			for(int i = 0; i < MAX_CLI; i++) {
 				if(clients[i] != -1) {
