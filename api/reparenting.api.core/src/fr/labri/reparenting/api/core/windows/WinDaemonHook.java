@@ -56,6 +56,4 @@ public class WinDaemonHook extends WinHook {
 			this.eventCatcher.stop();
 		}
 	}
-
-
 }

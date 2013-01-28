@@ -6,10 +6,10 @@
 	<classpathentry kind="lib" path="lib/platform.jar"/>
 	<classpathentry kind="lib" path="lib/swt.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/reparenting.api.launchprocess"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/reparenting.api.shared"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/J11"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/JNAUnixSocket"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jre7-32"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

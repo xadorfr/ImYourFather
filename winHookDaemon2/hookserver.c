@@ -16,6 +16,8 @@ void*
 service(void* port)
 {	
     SOCKET sock_server;
+	// int port_int = (int)(intptr_t) port; // 64bits version
+	int port_int = (int) port; // 32 bits version
 
     WSADATA wsaData;
     SOCKADDR_IN local;
@@ -28,7 +30,7 @@ service(void* port)
 
     local.sin_family = AF_INET;
     local.sin_addr.s_addr = INADDR_ANY;
-    local.sin_port = htons((u_short) 5555);
+    local.sin_port = htons(port_int);
 
     sock_server = socket(AF_INET,SOCK_STREAM, 0);
     if(sock_server == INVALID_SOCKET) {
@@ -58,6 +60,7 @@ service(void* port)
         client = accept(sock_server, (struct sockaddr*)&from, &fromlen);
         
 		if(client == INVALID_SOCKET) {
+			fprintf(stderr, "connect error");
 			continue;
 		}
 		
@@ -80,9 +83,15 @@ int
 main(int argc, char** argv)
 {
     int nRetCode = 0;
+	if(argc != 2) {
+	 fprintf(stderr, "usage : %s [port]", argv[0]);
+	 exit(EXIT_FAILURE);
+	}
+	int port = atoi(argv[1]); // TODO : change atoi use / consider possible errors
 	pthread_t thread;
 	
-    int rc = pthread_create(&thread, NULL, service, (void*) 0);
+    // int rc = pthread_create(&thread, NULL, service, (void*)(intptr_t) port); // 64 bits version
+	int rc = pthread_create(&thread, NULL, service, (void*) port); // 32 bits version
 	if(rc != 0) {
       exit(EXIT_FAILURE);
 	}

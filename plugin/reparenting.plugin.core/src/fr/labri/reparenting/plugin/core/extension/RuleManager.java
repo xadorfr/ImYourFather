@@ -30,7 +30,9 @@ import fr.labri.reparenting.plugin.core.ErrorHandler;
 import fr.labri.reparenting.plugin.core.view.ControlView;
 
 public class RuleManager {
-	private static int WIN_HOOK_PORT = 32000;
+	private static int WIN32_HOOK_PORT = 32000;
+	private static int WIN64_HOOK_PORT = 64000;
+	
 	private static String WINDAEMON_PLUGIN_ID = "cea.plugin.reparent.winhookdaemons";
 	private static String WINDAEMON32_PATH = "win32/HookInstaller32.exe";
 	private static String WINDAEMON64_PATH = "win64/HookInstaller64.exe";
@@ -83,7 +85,7 @@ public class RuleManager {
 
 	public void addWin32Rule(WinRule rule) {
 		if (winHook == null) {
-			winHook = new WinDaemonHook(WIN_HOOK_PORT);
+			winHook = new WinDaemonHook(WIN32_HOOK_PORT);
 			winHook.addObserver(destroyListener);
 			winHook.install();
 		}
@@ -101,7 +103,7 @@ public class RuleManager {
 
 	public void addWin64Rule(WinRule rule) {
 		if (winHook == null) {
-			winHook = new WinDaemonHook(WIN_HOOK_PORT);
+			winHook = new WinDaemonHook(WIN64_HOOK_PORT);
 			winHook.addObserver(destroyListener);
 			winHook.install();
 		}
@@ -158,14 +160,14 @@ public class RuleManager {
 	private void activateWin32Hook() {
 		// launch win32's hook daemon
 		hook32daemon = launchRessource(WINDAEMON_PLUGIN_ID, WINDAEMON32_PATH,
-				String.valueOf(WIN_HOOK_PORT));
+				String.valueOf(WIN32_HOOK_PORT));
 
 	}
 
 	private void activateWin64Hook() {
 		// launch win64's hook daemon
 		hook64daemon = launchRessource(WINDAEMON_PLUGIN_ID, WINDAEMON64_PATH,
-				String.valueOf(WIN_HOOK_PORT));
+				String.valueOf(WIN64_HOOK_PORT));
 	}
 
 	/* deletion */
