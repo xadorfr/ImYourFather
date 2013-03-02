@@ -1,4 +1,4 @@
-package fr.labri.reparenting.api.launchprocess.tests;
+package fr.labri.reparenting.api.launchprocess;
 
 import static org.junit.Assert.*;
 import java.io.FileNotFoundException;

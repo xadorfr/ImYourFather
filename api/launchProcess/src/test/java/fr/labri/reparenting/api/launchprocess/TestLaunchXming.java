@@ -1,4 +1,4 @@
-package fr.labri.reparenting.api.launchprocess.tests;
+package fr.labri.reparenting.api.launchprocess;
 
 import java.io.BufferedReader;
 import java.io.File;
