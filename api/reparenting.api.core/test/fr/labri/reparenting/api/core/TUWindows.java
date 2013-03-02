@@ -84,8 +84,8 @@ public class TUWindows {
 
 		/* launch daemon */
 		try {
-			// new LauncherJavaAPI("win32/HookInstaller32.exe").launch("32000");
-			new LauncherJavaAPI("win64/HookInstaller64.exe").launch("64000");
+			new LauncherJavaAPI("win32/HookInstaller32.exe").launch("32000");
+			//new LauncherJavaAPI("win64/HookInstaller64.exe").launch("64000");
 
 			/* identification param */
 			WinReparentManager rm = new WinReparentManager();
@@ -96,7 +96,7 @@ public class TUWindows {
 			winRule.activate();
 			
 			rm.addRule(winRule);
-			WinDaemonHook hk = new WinDaemonHook(64000);
+			WinDaemonHook hk = new WinDaemonHook(32000);
 			hk.addReparentManager(rm);
 
 			hk.install();

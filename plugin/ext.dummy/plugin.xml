@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="reparenting.plugin.ruleProvider">
+      <windowsRule
+            bitness="32 bits"
+            id="ext.dummy.windowsRule1">
+         <winFilter
+               property="title"
+               value=".*Bloc-notes">
+         </winFilter>
+      </windowsRule>
+   </extension>
+
+</plugin>

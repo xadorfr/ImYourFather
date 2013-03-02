@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?eclipse version="3.4"?>
 <plugin>
-   <extension-point id="cea.plugin.reparent.ruleProvider" name="Reparent rule provider" schema="schema/cea.plugin.reparent.ruleProvider.exsd"/>
+   <extension-point id="reparenting.plugin.ruleProvider" name="Reparent rule provider" schema="schema/reparenting.plugin.ruleProvider.exsd"/>
    <extension
          point="org.eclipse.ui.views">
       <view

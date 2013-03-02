@@ -26,6 +26,7 @@ public class WinEventCatcher extends GenericObservable<WinWindowEvent> {
 		public ServerMainThread(int port) throws IOException {
 			super();
 			this.sock = new Socket("localhost", port);
+			System.out.println("WinEventCatcher on port " + port);
 		}
 
 		@Override

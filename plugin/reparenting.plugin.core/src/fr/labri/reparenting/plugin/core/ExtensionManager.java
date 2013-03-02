@@ -23,7 +23,7 @@ import fr.labri.reparenting.plugin.util.ExtensionLoader;
 import fr.labri.reparenting.plugin.util.NoExtensionFoundException;
 
 public class ExtensionManager {
-	private static String EXT_ID = "cea.plugin.reparent.ruleProvider";
+	private static String EXT_ID = "reparenting.plugin.ruleProvider";
 
 	/* Windows contrib elts id */
 	private final static String WIN_RULE = "windowsRule";

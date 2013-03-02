@@ -33,12 +33,12 @@ public class RuleManager {
 	private static int WIN32_HOOK_PORT = 32000;
 	private static int WIN64_HOOK_PORT = 64000;
 	
-	private static String WINDAEMON_PLUGIN_ID = "cea.plugin.reparent.winhookdaemons";
+	private static String WINDAEMON_PLUGIN_ID = "reparenting.plugin.windows.hookdaemons";
 	private static String WINDAEMON32_PATH = "win32/HookInstaller32.exe";
 	private static String WINDAEMON64_PATH = "win64/HookInstaller64.exe";
 
 	private static String XSERVER_ARGS = "-internalwm -notrayicon";
-	private static String XSERVER_PLUGIN_ID = "cea.plugin.win.xserver";
+	private static String XSERVER_PLUGIN_ID = "reparenting.plugin.windows.xserver";
 	private static String XSERVER_PATH = "Xming/Xming.exe";
 
 	private WinDaemonHook winHook;
