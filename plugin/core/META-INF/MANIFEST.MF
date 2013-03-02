@@ -1,8 +1,8 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Reparent
-Bundle-SymbolicName: reparenting.plugin.core;singleton:=true
-Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: fr.labri.reparenting.plugin.core;singleton:=true
+Bundle-Version: 1.0
 Bundle-Activator: fr.labri.reparenting.plugin.core.Activator
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
@@ -13,18 +13,4 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.jface.databinding,
  com.ibm.icu
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
-Bundle-ClassPath: .,
- lib/jna.jar,
- lib/platform.jar,
- lib/J11.jar,
- lib/reparenting.api.core.jar,
- lib/reparenting.api.shared.jar,
- lib/reparenting.api.launchprocess.jar
-Export-Package: fr.labri.reparenting.api.core,
- fr.labri.reparenting.api.core.exception,
- fr.labri.reparenting.api.core.windows,
- fr.labri.reparenting.api.core.x11,
- fr.labri.reparenting.api.core.windows,
- fr.labri.reparenting.api.shared,
- fr.labri.reparenting.plugin.core.extension
 Bundle-ActivationPolicy: lazy

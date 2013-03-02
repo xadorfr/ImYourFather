@@ -10,7 +10,7 @@
 	<name>Im Your Father reparenting plugin</name>
 	<modules>
 		<module>feature.windows</module>
-		<module>core</module>
+		<module>fr.labri.reparenting.plugin.core</module>
 		<module>windows.hookdaemon</module>
 		<module>windows.xserver</module>
 	</modules>
