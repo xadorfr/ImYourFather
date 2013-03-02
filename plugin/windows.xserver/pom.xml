@@ -3,7 +3,7 @@
   <artifactId>windows.xserver</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <parent>
-  	<groupId>fr.labri.reparenting</groupId>
+  	<groupId>fr.labri.reparenting.plugin</groupId>
   	<artifactId>plugin</artifactId>
   	<version>1.0-SNAPSHOT</version>
   </parent>
