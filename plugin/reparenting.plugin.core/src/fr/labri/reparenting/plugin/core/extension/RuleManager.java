@@ -83,8 +83,9 @@ public class RuleManager {
 		});
 	}
 
-	public void addWin32Rule(WinRule rule) {
+	public void addWin32Rule(WinRule rule) {		
 		if (winHook == null) {
+			activateWin32Hook(); // launch hook service
 			winHook = new WinDaemonHook(WIN32_HOOK_PORT);
 			winHook.addObserver(destroyListener);
 			winHook.install();
@@ -95,14 +96,14 @@ public class RuleManager {
 			win32RM.addObserver(controlView.getWinEventListener());
 
 			winHook.addReparentManager(win32RM);
-			activateWin32Hook();
 		}
-
+		
 		win32RM.addRule(rule);
 	}
 
 	public void addWin64Rule(WinRule rule) {
 		if (winHook == null) {
+			activateWin64Hook(); // launch hook service
 			winHook = new WinDaemonHook(WIN64_HOOK_PORT);
 			winHook.addObserver(destroyListener);
 			winHook.install();
@@ -113,7 +114,6 @@ public class RuleManager {
 			win64RM.addObserver(controlView.getWinEventListener());
 
 			winHook.addReparentManager(win64RM);
-			activateWin64Hook();
 		}
 
 		win64RM.addRule(rule);

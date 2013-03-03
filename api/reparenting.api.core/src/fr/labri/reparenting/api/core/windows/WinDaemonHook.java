@@ -43,7 +43,7 @@ public class WinDaemonHook extends WinHook {
 				}
 			});
 		} catch (IOException e) {
-			// TODO
+			System.err.println("Socket error, can't connect to daemon : " + e.getMessage());
 		}
 	}
 
